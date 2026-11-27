@@ -1,0 +1,24 @@
+name: Check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: python3 scripts/package.py
+      - name: Check ZIP root
+        run: python3 -c "import zipfile; z=zipfile.ZipFile('dist/marginmate.zip'); assert 'manifest.json' in z.namelist(); assert z.testzip() is None"
+      - uses: browser-actions/setup-chrome@v2
+        id: chrome
+        with:
+          chrome-version: stable
+      - run: npm install --no-save --ignore-scripts --package-lock=false playwright-core@1.56.1
+      - run: npm run browser
+        env:
+          BROWSER_EXECUTABLE: ${{ steps.chrome.outputs.chrome-path }}

@@ -1,0 +1,16 @@
+{
+  "name": "marginmate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A private, selection-to-prompt reading desk for Chromium browsers.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "sync": "node scripts/sync.mjs",
+    "browser": "node tests/browser.cjs",
+    "package": "python scripts/package.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Turn a passage into an AI prompt for explaining, translating, or rewriting. Compose locally, then copy it to your assistant.">
+<title>MarginMate · Passage to prompt</title><link rel="icon" href="assets/icon.png"><link rel="stylesheet" href="assets/desk.css"></head>
+<body class="website">
+<header class="site-bar shell"><a class="brand" href="./"><span class="brandmark" aria-hidden="true">m</span>MarginMate</a><nav aria-label="Main"><a class="nav-active" href="#desk" data-t="navDesk">Prompt desk</a><a href="#install" data-t="navInstall">Install extension</a><button class="link-button" id="switchLocale" type="button">中文</button></nav></header>
+<main class="shell">
+<section class="hero"><div><h1><span data-t="heroFirst">From passage</span><br><em data-t="heroLast">to prompt.</em></h1>
+<p data-t="intro">Bring a line you're reading. Shape a question for your AI assistant.</p></div>
+<div class="folio" aria-hidden="true"><div class="folio-back"></div><div class="folio-sheet"><div class="paper-lines"></div><div class="folio-quote">“</div><div class="ink-line wide"></div><div class="ink-line"></div><div class="ink-line marked"></div><div class="ink-line short"></div><div class="ink-line wide"></div><div class="folio-pencil"><i></i></div></div></div></section>
+<div id="desk"></div>
+<section id="install" class="install"><div><span class="meta" data-t="extensionLabel">Browser extension</span><h2 data-t="installTitle">Take the desk with you.</h2><p data-t="installIntro">Select text on a webpage to open it in the side panel. The extension can also send a prompt to your own local model.</p>
+<a class="primary download" href="https://github.com/saimeeee/marginmate/releases/latest/download/marginmate.zip"><span aria-hidden="true">↓</span> <span data-t="download">Download extension ZIP</span></a></div>
+<ol class="install-steps"><li><strong data-t="getFiles">Unzip the download</strong><span data-t="getDetails">Keep the folder that contains manifest.json.</span></li>
+<li><strong data-t="load">Load the extension</strong><span data-t="loadDetail">Open chrome://extensions or edge://extensions, enable Developer mode, choose Load unpacked and select that folder.</span></li>
+<li><strong data-t="selectText">Select a passage</strong><span data-t="selectDetail">On a regular webpage, right-click your selection and choose “Bring selection to MarginMate”.</span></li></ol></section>
+</main><footer class="site-foot shell"><span>MarginMate</span><a href="https://github.com/saimeeee/marginmate" target="_blank" rel="noopener noreferrer" data-t="source">Source code ↗</a></footer>
+<script type="module" src="assets/desk.mjs"></script></body></html>
